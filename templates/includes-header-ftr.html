@@ -1,0 +1,31 @@
+{{define "header"}}
+<!doctype html>
+<html lang ="eng">
+<head>
+    <meta charset="UTF-8">
+    {{if .FirstName}}
+    <title>{{.FirstName}}</title>
+    {{else}}
+    <title>{{.Title}}</title>
+    {{end}}
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* fraction*/
+        }
+    </style>
+</head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<body>
+{{end}}
+
+{{define "footer"}}
+</body>
+</html>
+{{end}}
