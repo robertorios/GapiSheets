@@ -13,15 +13,25 @@
     </div>
     
     
-    <div style="width: 40%; float: left; background-color:rgb(255, 187, 0); border: 1px solid green">
+    <div style="padding:20px; top: 0; width: 40%; float: left; background-color:rgb(255, 187, 0); border: 1px solid green">
         {{range .}}
         <div>
             <div onmouseover="document.getElementById('{{.SolutionName}}').style.display = 'block'; myfunction('{{.StepsToSolution}}');this.style.background = '#FFFFFF'" onmouseout="document.getElementById('{{.SolutionName}}').style.display = 'none'; document.getElementById('{{.StepsToSolution}}').style.display = 'none';this.style.background = 'rgb(255, 187, 0)'">
-            <div id="content" style="width: 40%; float: left; padding-left: 10px;" >{{.SolutionName}}</div>
-            <div id="content" style="width: 5%;float: left; padding-left: 10px;">{{.Priority}}</div>
-            <div id="content" style="text-align: center; width: 13%;float: left; padding-left: 10px;">{{.CurrentSite}}</div>
-            <div id="content" style="text-align: center; width: 22%; float: left; padding-left: 10px;">content</div>
-            <div id="content" style="text-align: center; width: 13%;float: left; padding-left: 10px;">{{.NewLocation}}</div>
+            <div id="content" style="width: 40%; float: left; padding-left: 20px;" >{{.SolutionName}}</div>
+            <div id="content" style="width: 3%;float: left; padding-left: 10px;">{{.Priority}}</div>
+            <div id="content" style="text-align: center; width: 15%;float: left; padding-left: 10px;">{{.CurrentSite}}</div>
+            <!-- <div class="container" style="float: left; width:40%; padding-left: 10px; border: 1px solid black"> -->
+                    <!-- <div class="progress" style="width: 20%; border: 1px solid black; float: left; padding-left: 10px;">
+                      <div id={{.Progress}} class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+                      </div>
+                    </div> -->
+
+                    <div class="progress" style="width: 20%; border: 1px solid black; float: left; padding-left: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width:{{.Percentage}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{.Percentage}}</div>
+                          </div>
+            <!-- </div> -->
+            <!-- <div id="content" style="text-align: center; width: 22%; float: left; padding-left: 10px;">content</div> -->
+            <div id="content" style="text-align: center; width: 15%;float: left; padding-left: 10px;">{{.NewLocation}}</div>
             <div style="clear: both"></div>
             </div>
         </div>
@@ -55,4 +65,15 @@
         document.getElementById(StS).innerHTML = d
         document.getElementById(StS).style.display = 'block';
     }
+
+    // function barra(pro, StS){
+    //     var b = StS.split(/hello......................../)
+    //     for (var i = 0, len = b.length; i < len; i++) { b[i] = b[i].replace(/^,/, "")}
+    //     b.splice(0, 1)
+    //     c = []
+    //     for (var i = 0, len = b.length; i < len; i++) { if (b[i].search("done") > -1){c.push(b[i])}}
+    //     var progreso = ((c.length * 100)/b.length).toFixed().toString().concat("%")
+    //     document.getElementById(pro).style.display = progreso;
+
+    // }
 </script>

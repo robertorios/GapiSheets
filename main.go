@@ -36,7 +36,9 @@ type Application struct {
 	LatestVersion       string
 	CostToUpgrade       string
 	StepsToSolution     string
+	Progress            string
 	// milestone           Milestone
+	Percentage int
 }
 
 // type Milestone struct {
@@ -230,7 +232,9 @@ func index(w http.ResponseWriter, req *http.Request) {
 			// Print columns A and E, which correspond to indices 0 and 4.
 			// var result []interface{}
 			var result1 []string
+			var result2 []string
 			var result_string string
+			var percentage int
 			if len(resp1.Values) > 0 {
 				for _, resp1 := range resp1.Values {
 					// fmt.Println("resp Solution Name inside", reflect.ValueOf(resp[3]))
@@ -243,7 +247,8 @@ func index(w http.ResponseWriter, req *http.Request) {
 						// result = make([]interface{}, 0)
 						// result = append(result, resp1)
 						result1 = make([]string, 0)
-						fmt.Println(len(resp1))
+						result2 = make([]string, 0)
+						// fmt.Println(len(resp1))
 						sRand, err := randomstrings.GenerateRandomString(16) // generates a 16 digit random string
 						if err != nil {
 							// panic!
@@ -251,9 +256,27 @@ func index(w http.ResponseWriter, req *http.Request) {
 						for i := 0; i < len(resp1); i++ {
 							result1 = append(result1, resp1[i].(string)+"hello"+sRand)
 						}
-						fmt.Println(strings.Join(result1[:], ","))
+
+						// result2 = append(result1)
+
+						for i := 0; i < len(resp1); i++ {
+							if strings.Contains(resp1[i].(string), "done") {
+								result2 = append(result2, resp1[i].(string))
+							}
+
+						}
+						// fmt.Println(result2)
+						fmt.Println(len(result1))
+						fmt.Println(len(result2))
+
+						// fmt.Println(strings.Join(result1[:], ","))
 						result_string = strings.Join(result1[:], ",")
-						fmt.Printf("%#v", result1)
+						percentage = (len(result2) * 100) / len(result1)
+
+						// fmt.Println("resp type: ", reflect.TypeOf((len(result2)*100)/len(result1)))
+						// fmt.TypeOf((len(result2) * 100) / len(result1))
+						fmt.Println(percentage)
+						// fmt.Printf("%#v", result1)
 
 						// for i, resp1 := range len(resp1) {
 						// 	result1 = append(result1, resp1[i].(string))
@@ -265,6 +288,13 @@ func index(w http.ResponseWriter, req *http.Request) {
 				}
 
 			}
+			var barradeprogreso string
+			// sRand, err := randomstrings.GenerateRandomString(16) // generates a 16 digit random string
+			// if err != nil {
+			// 	// panic!
+			// }
+			// barradeprogreso = sRand
+
 			// fmt.Println("resp Solution Name", resp)
 			app := Application{
 				// a =: resp[0]
@@ -280,6 +310,8 @@ func index(w http.ResponseWriter, req *http.Request) {
 				// LatestVersion:       resp[9].(string),
 				// CostToUpgrade:       resp[10].(string),
 				StepsToSolution: result_string,
+				Progress:        barradeprogreso,
+				Percentage:      percentage,
 				// milestone: Milestone{
 				// 	step: result_string,
 				// },
