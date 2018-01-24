@@ -13,6 +13,8 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/adam-hanna/randomstrings"
+
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
@@ -242,8 +244,12 @@ func index(w http.ResponseWriter, req *http.Request) {
 						// result = append(result, resp1)
 						result1 = make([]string, 0)
 						fmt.Println(len(resp1))
+						sRand, err := randomstrings.GenerateRandomString(16) // generates a 16 digit random string
+						if err != nil {
+							// panic!
+						}
 						for i := 0; i < len(resp1); i++ {
-							result1 = append(result1, resp1[i].(string))
+							result1 = append(result1, resp1[i].(string)+"hello"+sRand)
 						}
 						fmt.Println(strings.Join(result1[:], ","))
 						result_string = strings.Join(result1[:], ",")

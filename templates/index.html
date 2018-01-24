@@ -7,10 +7,8 @@
         {{range .}}
         <div id={{.SolutionName}} style="display: none; position:absolute; float: left; padding-left: 10px; border: 1px solid red">
                 <div><b>Solution Description:</b><br>{{.SolutionDescription}}</div>
-                <div><b>Solution Description:</b><br>{{.StepsToSolution}}</div>
                 <div><b>Server:</b><br>{{.Server}}</div>
         </div>
-        <!-- <div style="clear: both"></div>   -->
         {{end}}
     </div>
     
@@ -18,7 +16,7 @@
     <div style="width: 40%; float: left; background-color:rgb(255, 187, 0); border: 1px solid green">
         {{range .}}
         <div>
-            <div onmouseover="document.getElementById('{{.SolutionName}}').style.display = 'block'; document.getElementById('{{.StepsToSolution}}').style.display = 'block';this.style.background = '#FFFFFF'" onmouseout="document.getElementById('{{.SolutionName}}').style.display = 'none'; document.getElementById('{{.StepsToSolution}}').style.display = 'none';this.style.background = 'rgb(255, 187, 0)'">
+            <div onmouseover="document.getElementById('{{.SolutionName}}').style.display = 'block'; myfunction('{{.StepsToSolution}}');this.style.background = '#FFFFFF'" onmouseout="document.getElementById('{{.SolutionName}}').style.display = 'none'; document.getElementById('{{.StepsToSolution}}').style.display = 'none';this.style.background = 'rgb(255, 187, 0)'">
             <div id="content" style="width: 40%; float: left; padding-left: 10px;" >{{.SolutionName}}</div>
             <div id="content" style="width: 5%;float: left; padding-left: 10px;">{{.Priority}}</div>
             <div id="content" style="text-align: center; width: 13%;float: left; padding-left: 10px;">{{.CurrentSite}}</div>
@@ -33,7 +31,7 @@
     <div style="position:sticky; padding:20px; top: 0; width:30%; float:left; background-color:lavender;">
         {{range .}}
         <div id={{.StepsToSolution}} style="display: none; position:absolute; float: left; padding-left: 10px; border: 1px solid red">
-                <div><br>{{.StepsToSolution}}</div>
+                <div></div>
         </div>
         {{end}}
     </div>
@@ -49,16 +47,12 @@
 {{template "footer"}}
 
 <script>
-    $(document).ready(function() {
-        $("div_left").hide();
-    });
+
+    function myfunction(StS){
+        var b = StS.split(/hello......................../)
+        for (var i = 0, len = b.length; i < len; i++) { b[i] = b[i].replace(/^,/, "")}
+        var d = b.join('<br>')
+        document.getElementById(StS).innerHTML = d
+        document.getElementById(StS).style.display = 'block';
+    }
 </script>
-<!-- <div id="the whole thing" style="height:100%; width:100%; overflow: hidden;">
-        <div id="leftThing" style="float: left; width:25%; background-color:blue;">Left Side Menu</div>
-        <div id="content" style="float: left; width:50%; background-color:green; text-align: center;">
-            {{range .}}
-                <p>{{.Priority}} - {{.SolutionName}} - {{.CurrentSite}} - {{.NewLocation}}</p>
-            {{end}}
-        </div>
-        <div id="rightThing" style="float: left; width:25%; background-color:yellow;">Right Side Menu</div>
-</div> -->
