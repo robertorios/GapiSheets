@@ -124,8 +124,13 @@ func saveToken(file string, token *oauth2.Token) {
 func main() {
 	http.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("public"))))
 	http.HandleFunc("/", index)
+	http.HandleFunc("/about", graph)
 	http.ListenAndServe(":8081", nil)
 
+}
+
+func graph(w http.ResponseWriter, req *http.Request) {
+	tpl.ExecuteTemplate(w, "graph.html", nil)
 }
 
 func index(w http.ResponseWriter, req *http.Request) {
