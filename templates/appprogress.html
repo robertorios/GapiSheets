@@ -3,9 +3,9 @@
 
 <div id="the whole thing">
     
-    <div style="position:sticky; padding:20px; top: 0; float:left; width: 30%; height: 800px; background-color:black; border: 1px solid black; color :white">
+    <div style="position:sticky; padding:20px; top: 0; float:left; width: 30%; background-color:lavender; border: 1px solid black">
         {{range .}}
-        <div id={{.SolutionName}} style="display: none; position:absolute; float: left; padding-left: 10px;">
+        <div id={{.SolutionName}} style="display: none; position:absolute; float: left; padding-left: 10px; border: 1px solid red">
                 <div><b>Solution Description:</b><br>{{.SolutionDescription}}</div>
                 <div><b>Server:</b><br>{{.Server}}</div>
         </div>
@@ -13,10 +13,10 @@
     </div>
     
     
-    <div style="padding:20px; top: 0; width: 40%; float: left; background-color:rgb(230,232,230);">
+    <div style="padding:20px; top: 0; width: 40%; float: left; background-color:rgb(255, 187, 0); border: 1px solid green">
         {{range .}}
         <div>
-            <div onmouseover="document.getElementById('{{.SolutionName}}').style.display = 'block'; myfunction('{{.StepsToSolution}}');this.style.background = '#FFFFFF'" onmouseout="document.getElementById('{{.SolutionName}}').style.display = 'none'; document.getElementById('{{.StepsToSolution}}').style.display = 'none';this.style.background = 'rgb(230,232,230)'">
+            <div onmouseover="document.getElementById('{{.SolutionName}}').style.display = 'block'; myfunction('{{.StepsToSolution}}');this.style.background = '#FFFFFF'" onmouseout="document.getElementById('{{.SolutionName}}').style.display = 'none'; document.getElementById('{{.StepsToSolution}}').style.display = 'none';this.style.background = 'rgb(255, 187, 0)'">
             <div id="content" style="width: 40%; float: left; padding-left: 20px;" >{{.SolutionName}}</div>
             <div id="content" style="width: 3%;float: left; padding-left: 10px;">{{.Priority}}</div>
             <div id="content" style="text-align: center; width: 15%;float: left; padding-left: 10px;">{{.CurrentSite}}</div>
@@ -38,9 +38,9 @@
         {{end}}
     </div>
     
-    <div style="position:sticky; padding:20px; top: 0; width:30%; height: 800px; float:left; background-color:black; color:white;">
+    <div style="position:sticky; padding:20px; top: 0; width:30%; float:left; background-color:lavender;">
         {{range .}}
-        <div id={{.StepsToSolution}} style="display: none; position:absolute; float: left; padding-left: 10px;">
+        <div id={{.StepsToSolution}} style="display: none; position:absolute; float: left; padding-left: 10px; border: 1px solid red">
                 <div></div>
         </div>
         {{end}}
@@ -48,6 +48,11 @@
     <div style="clear: both"></div>
 </div>
 
+<div class="row">
+        <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+        <div class="col-sm-6" style="background-color:lavenderblush;">.col-sm-6</div>
+        <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+      </div>
 
 {{template "footer"}}
 

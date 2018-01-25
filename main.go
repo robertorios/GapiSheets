@@ -122,6 +122,7 @@ func saveToken(file string, token *oauth2.Token) {
 }
 
 func main() {
+	http.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("public"))))
 	http.HandleFunc("/", index)
 	http.ListenAndServe(":8081", nil)
 

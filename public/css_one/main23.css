@@ -1,0 +1,74 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	
+	box-sizing: border-box; 
+}
+
+html, body  { 
+	width: 100%;
+	background-color: black;
+}
+
+h1 {
+    color: red;
+}
+
+.paddingBlock {
+	padding: 20px 0;
+}
+
+.eqWrap {
+	display: flex;
+}
+
+.eq {
+	padding: 10px;
+}
+
+.eq:nth-of-type(odd) {
+	background: yellow;
+}
+
+.eq:nth-of-type(even) {
+	background: lightblue;
+}
+
+.equalHW {
+	flex: 1;
+}
+
+.equalHMWrap {
+	justify-content: space-between;
+}
+
+.equalHM {
+	width: 32%;
+}
+
+.equalHMRWrap {
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.equalHMR {
+	width: 32%;
+	margin-bottom: 2%;
+}
+
+.equalHMVWrap {
+	flex-wrap: wrap;
+}
+
+.equalHMV {
+	width: 32%;
+	margin: 1%;	
+}
+
+.equalHMV:nth-of-type(3n) {
+	margin-right: 0;	
+}
+
+.equalHMV:nth-of-type(3n+1) {
+	margin-left: 0;	
+}
