@@ -1,7 +1,9 @@
 {{template "header"}}
 
     <!-- Start your project here-->
+    <div style="width: 500px; height: 500px;">
     <canvas id="pieChart"></canvas>
+    </div>
     <!-- /Start your project here-->
 
     <!-- SCRIPTS -->
@@ -23,12 +25,12 @@
 var myPieChart = new Chart(ctxP, {
     type: 'pie',
     data: {
-        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+        labels: ["MS Radius Server", "Aciss", "Arbitrator", "Coplink", "Crime View", "Commvault", "ADFS", "Active Batch V9", "Active Directory", "FME", "Wasp", "Kaspersky", "Active Batch V4", "Cityworks", "Cityworks GL Interface ", "Cityworks HR interface", "Cityview", "Incode", "TimeClock Plus", "Accela on-premise", "Radius", "Google Apps Directory Sync", "Cam Manager", "IP Configuration", "LANsweeper", "PRTG Core", "ENTELIWEB", "PTax", "MS Exchange", "Arc View", "Open Data", "SSRS/SSIS", "Water quality", "Recycle Right", "Envision Ware", "OnBase", "Tactics", "Air Pollution file interface", "Blueteam", "IA Pro Application", "RMS", "NowSolutions", "Harris Govern", "Netmotion V7.0", "Mobile PD"],
         datasets: [
             {
-                data: [300, 50, 100, 40, 120],
-                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
-                hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+                data: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+                backgroundColor: ["#ee9572" ,"#db7093" ,"#757575" ,"#828282" ,"#00ced1" ,"#4eee94" ,"#eee0e5" ,"#ff7f00" ,"#b0e2ff" ,"#c2c2c2" ,"#6a5acd" ,"#63b8ff" ,"#cd96cd" ,"#ffb90f" ,"#cd9b9b" ,"#ff7256" ,"#ffefdb" ,"#00ff7f" ,"#7a378b" ,"#7fff00" ,"#8b795e" ,"#00008b" ,"#eec900" ,"#fffacd" ,"#9fb6cd" ,"#8b4726" ,"#bbffff" ,"#ff7f50" ,"#ffefd5" ,"#a2cd5a" ,"#d3d3d3" ,"#838b83" ,"#303030" ,"#cd00cd" ,"#458b00" ,"#cd5555" ,"#9370db" ,"#f4a460" ,"#cdaf95" ,"#8b4789" ,"#8b6969" ,"#eed8ae" ,"#436eee" ,"#1f1f1f" ,"#cdcdb4"],
+                // hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774", "#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
             }
         ]
     },
@@ -36,6 +38,24 @@ var myPieChart = new Chart(ctxP, {
         responsive: true
     }    
 });
+
+
+// var myPieChart1 = new Chart(ctxP, {
+//     type: 'pie',
+//     data: {
+//         labels: ["MS Radius Server", "Aciss", "Arbitrator", "Coplink", "Crime View", "Commvault", "ADFS", "Active Batch V9", "Active Directory", "FME", "Wasp", "Kaspersky", "Active Batch V4", "Cityworks", "Cityworks GL Interface ", "Cityworks HR interface", "Cityview", "Incode", "TimeClock Plus", "Accela on-premise", "Radius", "Google Apps Directory Sync", "Cam Manager", "IP Configuration", "LANsweeper", "PRTG Core", "ENTELIWEB", "PTax", "MS Exchange", "Arc View", "Open Data", "SSRS/SSIS", "Water quality", "Recycle Right", "Envision Ware", "OnBase", "Tactics", "Air Pollution file interface", "Blueteam", "IA Pro Application", "RMS", "NowSolutions", "Harris Govern", "Netmotion V7.0", "Mobile PD"],
+//         datasets: [
+//             {
+//                 data: [300, 50, 100, 40, 120],
+//                 backgroundColor: ["#ee9572" ,"#db7093" ,"#757575" ,"#828282" ,"#00ced1" ,"#4eee94" ,"#eee0e5" ,"#ff7f00" ,"#b0e2ff" ,"#c2c2c2" ,"#6a5acd" ,"#63b8ff" ,"#cd96cd" ,"#ffb90f" ,"#cd9b9b" ,"#ff7256" ,"#ffefdb" ,"#00ff7f" ,"#7a378b" ,"#7fff00" ,"#8b795e" ,"#00008b" ,"#eec900" ,"#fffacd" ,"#9fb6cd" ,"#8b4726" ,"#bbffff" ,"#ff7f50" ,"#ffefd5" ,"#a2cd5a" ,"#d3d3d3" ,"#838b83" ,"#303030" ,"#cd00cd" ,"#458b00" ,"#cd5555" ,"#9370db" ,"#f4a460" ,"#cdaf95" ,"#8b4789" ,"#8b6969" ,"#eed8ae" ,"#436eee" ,"#1f1f1f" ,"#cdcdb4"],
+//                 // hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+//             }
+//         ]
+//     },
+//     options: {
+//         responsive: true
+//     }    
+// });
     </script>
 
 
